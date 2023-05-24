@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище st2_Rozhin_telecom1ModelContainer" CdmEntityContainer="st2_Rozhin_telecom1Entities">
+    <EntitySetMapping Name="Authorization">
+      <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.Authorization">
+        <MappingFragment StoreEntitySet="Authorization">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CodeResidenceAddress">
+      <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.CodeResidenceAddress">
+        <MappingFragment StoreEntitySet="CodeResidenceAddress">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IdentificationData">
+      <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.IdentificationData">
+        <MappingFragment StoreEntitySet="IdentificationData">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="InventoryNumber" ColumnName="InventoryNumber" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="MACAddress" ColumnName="MACAddress" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="NameEquipment" ColumnName="NameEquipment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InformationContract">
+      <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.InformationContract">
+        <MappingFragment StoreEntitySet="InformationContract">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+          <ScalarProperty Name="DateOfConclusionContract" ColumnName="DateOfConclusionContract" />
+          <ScalarProperty Name="TypeContract" ColumnName="TypeContract" />
+          <ScalarProperty Name="ReasonTerminationContract" ColumnName="ReasonTerminationContract" />
+          <ScalarProperty Name="PersonalNumber" ColumnName="PersonalNumber" />
+          <ScalarProperty Name="Services" ColumnName="Services" />
+          <ScalarProperty Name="DateTerminationContract" ColumnName="DateTerminationContract" />
+          <ScalarProperty Name="SerialNumberEquipment" ColumnName="SerialNumberEquipment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Informationlocation">
+      <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.Informationlocation">
+        <MappingFragment StoreEntitySet="Informationlocation">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="InstallationAddres" ColumnName="InstallationAddres" />
+          <ScalarProperty Name="ConnectionPoint" ColumnName="ConnectionPoint" />
+          <ScalarProperty Name="Installationlocation" ColumnName="Installationlocation" />
+          <ScalarProperty Name="InstallationDate" ColumnName="InstallationDate" />
+          <ScalarProperty Name="GatewayPhoneNumber" ColumnName="GatewayPhoneNumber" />
+          <ScalarProperty Name="PhoneList" ColumnName="PhoneList" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InformationSubscriber">
+      <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.InformationSubscriber">
+        <MappingFragment StoreEntitySet="InformationSubscriber">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="NumberPhone" ColumnName="NumberPhone" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="SubscribersNumber" ColumnName="SubscribersNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InstalledEquipment">
+      <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.InstalledEquipment">
+        <MappingFragment StoreEntitySet="InstalledEquipment">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CodeTypeEquipment" ColumnName="CodeTypeEquipment" />
+          <ScalarProperty Name="CodeIdentificationData" ColumnName="CodeIdentificationData" />
+          <ScalarProperty Name="CodeTypePort" ColumnName="CodeTypePort" />
+          <ScalarProperty Name="CodeInformationlocation" ColumnName="CodeInformationlocation" />
+          <ScalarProperty Name="NumbePorts" ColumnName="NumbePorts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PassportData">
+      <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.PassportData">
+        <MappingFragment StoreEntitySet="PassportData">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="CodeResidenceAddress" ColumnName="CodeResidenceAddress" />
+          <ScalarProperty Name="Series" ColumnName="Series" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="IssuedByWhom" ColumnName="IssuedByWhom" />
+          <ScalarProperty Name="DateOfIssue" ColumnName="DateOfIssue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subscriber">
+      <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.Subscriber">
+        <MappingFragment StoreEntitySet="Subscriber">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="Condition" ColumnName="Condition" />
+          <ScalarProperty Name="CodeInformationSubscriber" ColumnName="CodeInformationSubscriber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeEquipment">
+      <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.TypeEquipment">
+        <MappingFragment StoreEntitySet="TypeEquipment">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypePort">
+      <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.TypePort">
+        <MappingFragment StoreEntitySet="TypePort">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="IDSubscriber" ColumnName="IDSubscriber" />
+          <ScalarProperty Name="NumberPort" ColumnName="NumberPort" />
+          <ScalarProperty Name="TypePort1" ColumnName="TypePort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,766 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище st2_Rozhin_telecom1Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Authorization">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Number" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CodeResidenceAddress">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="int" Nullable="false" />
+          <Property Name="Country" Type="varchar" MaxLength="30" />
+          <Property Name="City" Type="varchar" MaxLength="30" />
+          <Property Name="Street" Type="varchar" MaxLength="30" />
+          <Property Name="HouseNumber" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="IdentificationData">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SerialNumber" Type="varchar" MaxLength="50" />
+          <Property Name="InventoryNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IpAddress" Type="varchar" MaxLength="20" />
+          <Property Name="MACAddress" Type="varchar" MaxLength="50" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NameEquipment" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InformationContract">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContractNumber" Type="varchar" MaxLength="50" />
+          <Property Name="DateOfConclusionContract" Type="date" />
+          <Property Name="TypeContract" Type="varchar" MaxLength="20" />
+          <Property Name="ReasonTerminationContract" Type="varchar" MaxLength="20" />
+          <Property Name="PersonalNumber" Type="varchar" MaxLength="100" />
+          <Property Name="Services" Type="varchar" MaxLength="50" />
+          <Property Name="DateTerminationContract" Type="date" />
+          <Property Name="SerialNumberEquipment" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Informationlocation">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InstallationAddres" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ConnectionPoint" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Installationlocation" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="InstallationDate" Type="date" Nullable="false" />
+          <Property Name="GatewayPhoneNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PhoneList" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="InformationSubscriber">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="int" Nullable="false" />
+          <Property Name="NumberPhone" Type="varchar" MaxLength="50" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="50" />
+          <Property Name="Birthday" Type="date" />
+          <Property Name="Gender" Type="varchar" MaxLength="20" />
+          <Property Name="SubscribersNumber" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="InstalledEquipment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodeTypeEquipment" Type="int" Nullable="false" />
+          <Property Name="CodeIdentificationData" Type="int" Nullable="false" />
+          <Property Name="CodeTypePort" Type="int" Nullable="false" />
+          <Property Name="CodeInformationlocation" Type="int" Nullable="false" />
+          <Property Name="NumbePorts" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PassportData">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="int" Nullable="false" />
+          <Property Name="CodeResidenceAddress" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Series" Type="varchar" MaxLength="20" />
+          <Property Name="Number" Type="varchar" MaxLength="50" />
+          <Property Name="IssuedByWhom" Type="varchar" MaxLength="20" />
+          <Property Name="DateOfIssue" Type="date" />
+        </EntityType>
+        <EntityType Name="Subscriber">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="lastName" Type="varchar" MaxLength="100" />
+          <Property Name="Patronymic" Type="varchar" MaxLength="50" />
+          <Property Name="Condition" Type="varchar" MaxLength="20" />
+          <Property Name="CodeInformationSubscriber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TypeEquipment">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypePort">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDSubscriber" Type="int" Nullable="false" />
+          <Property Name="NumberPort" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TypePort" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_InformationSubscriber_InformationContract">
+          <End Role="InformationContract" Type="Self.InformationContract" Multiplicity="1" />
+          <End Role="InformationSubscriber" Type="Self.InformationSubscriber" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="InformationContract">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="InformationSubscriber">
+              <PropertyRef Name="Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InformationSubscriber_PassportData">
+          <End Role="PassportData" Type="Self.PassportData" Multiplicity="1" />
+          <End Role="InformationSubscriber" Type="Self.InformationSubscriber" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PassportData">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="InformationSubscriber">
+              <PropertyRef Name="Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InstalledEquipment_IdentificationData">
+          <End Role="IdentificationData" Type="Self.IdentificationData" Multiplicity="1" />
+          <End Role="InstalledEquipment" Type="Self.InstalledEquipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IdentificationData">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="InstalledEquipment">
+              <PropertyRef Name="CodeIdentificationData" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InstalledEquipment_Informationlocation">
+          <End Role="Informationlocation" Type="Self.Informationlocation" Multiplicity="1" />
+          <End Role="InstalledEquipment" Type="Self.InstalledEquipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Informationlocation">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="InstalledEquipment">
+              <PropertyRef Name="CodeInformationlocation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InstalledEquipment_TypeEquipment">
+          <End Role="TypeEquipment" Type="Self.TypeEquipment" Multiplicity="1" />
+          <End Role="InstalledEquipment" Type="Self.InstalledEquipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeEquipment">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="InstalledEquipment">
+              <PropertyRef Name="CodeTypeEquipment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InstalledEquipment_TypePort">
+          <End Role="TypePort" Type="Self.TypePort" Multiplicity="1" />
+          <End Role="InstalledEquipment" Type="Self.InstalledEquipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypePort">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="InstalledEquipment">
+              <PropertyRef Name="CodeTypePort" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PassportData_CodeResidenceAddress">
+          <End Role="CodeResidenceAddress" Type="Self.CodeResidenceAddress" Multiplicity="1" />
+          <End Role="PassportData" Type="Self.PassportData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodeResidenceAddress">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="PassportData">
+              <PropertyRef Name="CodeResidenceAddress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subscriber_InformationSubscriber">
+          <End Role="InformationSubscriber" Type="Self.InformationSubscriber" Multiplicity="1" />
+          <End Role="Subscriber" Type="Self.Subscriber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InformationSubscriber">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Subscriber">
+              <PropertyRef Name="CodeInformationSubscriber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypePort_Subscriber">
+          <End Role="Subscriber" Type="Self.Subscriber" Multiplicity="1" />
+          <End Role="TypePort" Type="Self.TypePort" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subscriber">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TypePort">
+              <PropertyRef Name="IDSubscriber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище st2_Rozhin_telecom1ModelContainer">
+          <EntitySet Name="Authorization" EntityType="Self.Authorization" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CodeResidenceAddress" EntityType="Self.CodeResidenceAddress" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IdentificationData" EntityType="Self.IdentificationData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InformationContract" EntityType="Self.InformationContract" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Informationlocation" EntityType="Self.Informationlocation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InformationSubscriber" EntityType="Self.InformationSubscriber" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InstalledEquipment" EntityType="Self.InstalledEquipment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PassportData" EntityType="Self.PassportData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subscriber" EntityType="Self.Subscriber" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeEquipment" EntityType="Self.TypeEquipment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypePort" EntityType="Self.TypePort" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_InformationSubscriber_InformationContract" Association="Self.FK_InformationSubscriber_InformationContract">
+            <End Role="InformationContract" EntitySet="InformationContract" />
+            <End Role="InformationSubscriber" EntitySet="InformationSubscriber" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InformationSubscriber_PassportData" Association="Self.FK_InformationSubscriber_PassportData">
+            <End Role="PassportData" EntitySet="PassportData" />
+            <End Role="InformationSubscriber" EntitySet="InformationSubscriber" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InstalledEquipment_IdentificationData" Association="Self.FK_InstalledEquipment_IdentificationData">
+            <End Role="IdentificationData" EntitySet="IdentificationData" />
+            <End Role="InstalledEquipment" EntitySet="InstalledEquipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InstalledEquipment_Informationlocation" Association="Self.FK_InstalledEquipment_Informationlocation">
+            <End Role="Informationlocation" EntitySet="Informationlocation" />
+            <End Role="InstalledEquipment" EntitySet="InstalledEquipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InstalledEquipment_TypeEquipment" Association="Self.FK_InstalledEquipment_TypeEquipment">
+            <End Role="TypeEquipment" EntitySet="TypeEquipment" />
+            <End Role="InstalledEquipment" EntitySet="InstalledEquipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InstalledEquipment_TypePort" Association="Self.FK_InstalledEquipment_TypePort">
+            <End Role="TypePort" EntitySet="TypePort" />
+            <End Role="InstalledEquipment" EntitySet="InstalledEquipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PassportData_CodeResidenceAddress" Association="Self.FK_PassportData_CodeResidenceAddress">
+            <End Role="CodeResidenceAddress" EntitySet="CodeResidenceAddress" />
+            <End Role="PassportData" EntitySet="PassportData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subscriber_InformationSubscriber" Association="Self.FK_Subscriber_InformationSubscriber">
+            <End Role="InformationSubscriber" EntitySet="InformationSubscriber" />
+            <End Role="Subscriber" EntitySet="Subscriber" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypePort_Subscriber" Association="Self.FK_TypePort_Subscriber">
+            <End Role="Subscriber" EntitySet="Subscriber" />
+            <End Role="TypePort" EntitySet="TypePort" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="st2_Rozhin_telecom1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Authorization">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CodeResidenceAddress">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int32" Nullable="false" />
+          <Property Name="Country" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Street" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="HouseNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PassportData" Relationship="Self.FK_PassportData_CodeResidenceAddress" FromRole="CodeResidenceAddress" ToRole="PassportData" />
+        </EntityType>
+        <EntityType Name="IdentificationData">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InventoryNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IpAddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MACAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NameEquipment" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="InstalledEquipment" Relationship="Self.FK_InstalledEquipment_IdentificationData" FromRole="IdentificationData" ToRole="InstalledEquipment" />
+        </EntityType>
+        <EntityType Name="InformationContract">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContractNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfConclusionContract" Type="DateTime" Precision="0" />
+          <Property Name="TypeContract" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ReasonTerminationContract" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PersonalNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Services" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateTerminationContract" Type="DateTime" Precision="0" />
+          <Property Name="SerialNumberEquipment" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="InformationSubscriber" Relationship="Self.FK_InformationSubscriber_InformationContract" FromRole="InformationContract" ToRole="InformationSubscriber" />
+        </EntityType>
+        <EntityType Name="Informationlocation">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InstallationAddres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ConnectionPoint" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Installationlocation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InstallationDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="GatewayPhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PhoneList" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="InstalledEquipment" Relationship="Self.FK_InstalledEquipment_Informationlocation" FromRole="Informationlocation" ToRole="InstalledEquipment" />
+        </EntityType>
+        <EntityType Name="InformationSubscriber">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int32" Nullable="false" />
+          <Property Name="NumberPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Birthday" Type="DateTime" Precision="0" />
+          <Property Name="Gender" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SubscribersNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="InformationContract" Relationship="Self.FK_InformationSubscriber_InformationContract" FromRole="InformationSubscriber" ToRole="InformationContract" />
+          <NavigationProperty Name="PassportData" Relationship="Self.FK_InformationSubscriber_PassportData" FromRole="InformationSubscriber" ToRole="PassportData" />
+          <NavigationProperty Name="Subscriber" Relationship="Self.FK_Subscriber_InformationSubscriber" FromRole="InformationSubscriber" ToRole="Subscriber" />
+        </EntityType>
+        <EntityType Name="InstalledEquipment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodeTypeEquipment" Type="Int32" Nullable="false" />
+          <Property Name="CodeIdentificationData" Type="Int32" Nullable="false" />
+          <Property Name="CodeTypePort" Type="Int32" Nullable="false" />
+          <Property Name="CodeInformationlocation" Type="Int32" Nullable="false" />
+          <Property Name="NumbePorts" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="IdentificationData" Relationship="Self.FK_InstalledEquipment_IdentificationData" FromRole="InstalledEquipment" ToRole="IdentificationData" />
+          <NavigationProperty Name="Informationlocation" Relationship="Self.FK_InstalledEquipment_Informationlocation" FromRole="InstalledEquipment" ToRole="Informationlocation" />
+          <NavigationProperty Name="TypeEquipment" Relationship="Self.FK_InstalledEquipment_TypeEquipment" FromRole="InstalledEquipment" ToRole="TypeEquipment" />
+          <NavigationProperty Name="TypePort" Relationship="Self.FK_InstalledEquipment_TypePort" FromRole="InstalledEquipment" ToRole="TypePort" />
+        </EntityType>
+        <EntityType Name="PassportData">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int32" Nullable="false" />
+          <Property Name="CodeResidenceAddress" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Series" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IssuedByWhom" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfIssue" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="CodeResidenceAddress1" Relationship="Self.FK_PassportData_CodeResidenceAddress" FromRole="PassportData" ToRole="CodeResidenceAddress" />
+          <NavigationProperty Name="InformationSubscriber" Relationship="Self.FK_InformationSubscriber_PassportData" FromRole="PassportData" ToRole="InformationSubscriber" />
+        </EntityType>
+        <EntityType Name="Subscriber">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Condition" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CodeInformationSubscriber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="InformationSubscriber" Relationship="Self.FK_Subscriber_InformationSubscriber" FromRole="Subscriber" ToRole="InformationSubscriber" />
+          <NavigationProperty Name="TypePort" Relationship="Self.FK_TypePort_Subscriber" FromRole="Subscriber" ToRole="TypePort" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TypeEquipment">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="InstalledEquipment" Relationship="Self.FK_InstalledEquipment_TypeEquipment" FromRole="TypeEquipment" ToRole="InstalledEquipment" />
+        </EntityType>
+        <EntityType Name="TypePort">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDSubscriber" Type="Int32" Nullable="false" />
+          <Property Name="NumberPort" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TypePort1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="InstalledEquipment" Relationship="Self.FK_InstalledEquipment_TypePort" FromRole="TypePort" ToRole="InstalledEquipment" />
+          <NavigationProperty Name="Subscriber" Relationship="Self.FK_TypePort_Subscriber" FromRole="TypePort" ToRole="Subscriber" />
+        </EntityType>
+        <Association Name="FK_PassportData_CodeResidenceAddress">
+          <End Role="CodeResidenceAddress" Type="Self.CodeResidenceAddress" Multiplicity="1" />
+          <End Role="PassportData" Type="Self.PassportData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodeResidenceAddress">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="PassportData">
+              <PropertyRef Name="CodeResidenceAddress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InstalledEquipment_IdentificationData">
+          <End Role="IdentificationData" Type="Self.IdentificationData" Multiplicity="1" />
+          <End Role="InstalledEquipment" Type="Self.InstalledEquipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IdentificationData">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="InstalledEquipment">
+              <PropertyRef Name="CodeIdentificationData" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InformationSubscriber_InformationContract">
+          <End Role="InformationContract" Type="Self.InformationContract" Multiplicity="1" />
+          <End Role="InformationSubscriber" Type="Self.InformationSubscriber" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="InformationContract">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="InformationSubscriber">
+              <PropertyRef Name="Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InstalledEquipment_Informationlocation">
+          <End Role="Informationlocation" Type="Self.Informationlocation" Multiplicity="1" />
+          <End Role="InstalledEquipment" Type="Self.InstalledEquipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Informationlocation">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="InstalledEquipment">
+              <PropertyRef Name="CodeInformationlocation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InformationSubscriber_PassportData">
+          <End Role="PassportData" Type="Self.PassportData" Multiplicity="1" />
+          <End Role="InformationSubscriber" Type="Self.InformationSubscriber" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PassportData">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="InformationSubscriber">
+              <PropertyRef Name="Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subscriber_InformationSubscriber">
+          <End Role="InformationSubscriber" Type="Self.InformationSubscriber" Multiplicity="1" />
+          <End Role="Subscriber" Type="Self.Subscriber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InformationSubscriber">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Subscriber">
+              <PropertyRef Name="CodeInformationSubscriber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InstalledEquipment_TypeEquipment">
+          <End Role="TypeEquipment" Type="Self.TypeEquipment" Multiplicity="1" />
+          <End Role="InstalledEquipment" Type="Self.InstalledEquipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeEquipment">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="InstalledEquipment">
+              <PropertyRef Name="CodeTypeEquipment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InstalledEquipment_TypePort">
+          <End Role="TypePort" Type="Self.TypePort" Multiplicity="1" />
+          <End Role="InstalledEquipment" Type="Self.InstalledEquipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypePort">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="InstalledEquipment">
+              <PropertyRef Name="CodeTypePort" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypePort_Subscriber">
+          <End Role="Subscriber" Type="Self.Subscriber" Multiplicity="1" />
+          <End Role="TypePort" Type="Self.TypePort" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subscriber">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TypePort">
+              <PropertyRef Name="IDSubscriber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="st2_Rozhin_telecom1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Authorization" EntityType="Self.Authorization" />
+          <EntitySet Name="CodeResidenceAddress" EntityType="Self.CodeResidenceAddress" />
+          <EntitySet Name="IdentificationData" EntityType="Self.IdentificationData" />
+          <EntitySet Name="InformationContract" EntityType="Self.InformationContract" />
+          <EntitySet Name="Informationlocation" EntityType="Self.Informationlocation" />
+          <EntitySet Name="InformationSubscriber" EntityType="Self.InformationSubscriber" />
+          <EntitySet Name="InstalledEquipment" EntityType="Self.InstalledEquipment" />
+          <EntitySet Name="PassportData" EntityType="Self.PassportData" />
+          <EntitySet Name="Subscriber" EntityType="Self.Subscriber" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TypeEquipment" EntityType="Self.TypeEquipment" />
+          <EntitySet Name="TypePort" EntityType="Self.TypePort" />
+          <AssociationSet Name="FK_PassportData_CodeResidenceAddress" Association="Self.FK_PassportData_CodeResidenceAddress">
+            <End Role="CodeResidenceAddress" EntitySet="CodeResidenceAddress" />
+            <End Role="PassportData" EntitySet="PassportData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InstalledEquipment_IdentificationData" Association="Self.FK_InstalledEquipment_IdentificationData">
+            <End Role="IdentificationData" EntitySet="IdentificationData" />
+            <End Role="InstalledEquipment" EntitySet="InstalledEquipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InformationSubscriber_InformationContract" Association="Self.FK_InformationSubscriber_InformationContract">
+            <End Role="InformationContract" EntitySet="InformationContract" />
+            <End Role="InformationSubscriber" EntitySet="InformationSubscriber" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InstalledEquipment_Informationlocation" Association="Self.FK_InstalledEquipment_Informationlocation">
+            <End Role="Informationlocation" EntitySet="Informationlocation" />
+            <End Role="InstalledEquipment" EntitySet="InstalledEquipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InformationSubscriber_PassportData" Association="Self.FK_InformationSubscriber_PassportData">
+            <End Role="PassportData" EntitySet="PassportData" />
+            <End Role="InformationSubscriber" EntitySet="InformationSubscriber" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subscriber_InformationSubscriber" Association="Self.FK_Subscriber_InformationSubscriber">
+            <End Role="InformationSubscriber" EntitySet="InformationSubscriber" />
+            <End Role="Subscriber" EntitySet="Subscriber" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InstalledEquipment_TypeEquipment" Association="Self.FK_InstalledEquipment_TypeEquipment">
+            <End Role="TypeEquipment" EntitySet="TypeEquipment" />
+            <End Role="InstalledEquipment" EntitySet="InstalledEquipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InstalledEquipment_TypePort" Association="Self.FK_InstalledEquipment_TypePort">
+            <End Role="TypePort" EntitySet="TypePort" />
+            <End Role="InstalledEquipment" EntitySet="InstalledEquipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypePort_Subscriber" Association="Self.FK_TypePort_Subscriber">
+            <End Role="Subscriber" EntitySet="Subscriber" />
+            <End Role="TypePort" EntitySet="TypePort" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище st2_Rozhin_telecom1ModelContainer" CdmEntityContainer="st2_Rozhin_telecom1Entities">
+          <EntitySetMapping Name="Authorization">
+            <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.Authorization">
+              <MappingFragment StoreEntitySet="Authorization">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CodeResidenceAddress">
+            <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.CodeResidenceAddress">
+              <MappingFragment StoreEntitySet="CodeResidenceAddress">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IdentificationData">
+            <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.IdentificationData">
+              <MappingFragment StoreEntitySet="IdentificationData">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="InventoryNumber" ColumnName="InventoryNumber" />
+                <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+                <ScalarProperty Name="MACAddress" ColumnName="MACAddress" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="NameEquipment" ColumnName="NameEquipment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InformationContract">
+            <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.InformationContract">
+              <MappingFragment StoreEntitySet="InformationContract">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+                <ScalarProperty Name="DateOfConclusionContract" ColumnName="DateOfConclusionContract" />
+                <ScalarProperty Name="TypeContract" ColumnName="TypeContract" />
+                <ScalarProperty Name="ReasonTerminationContract" ColumnName="ReasonTerminationContract" />
+                <ScalarProperty Name="PersonalNumber" ColumnName="PersonalNumber" />
+                <ScalarProperty Name="Services" ColumnName="Services" />
+                <ScalarProperty Name="DateTerminationContract" ColumnName="DateTerminationContract" />
+                <ScalarProperty Name="SerialNumberEquipment" ColumnName="SerialNumberEquipment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Informationlocation">
+            <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.Informationlocation">
+              <MappingFragment StoreEntitySet="Informationlocation">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="InstallationAddres" ColumnName="InstallationAddres" />
+                <ScalarProperty Name="ConnectionPoint" ColumnName="ConnectionPoint" />
+                <ScalarProperty Name="Installationlocation" ColumnName="Installationlocation" />
+                <ScalarProperty Name="InstallationDate" ColumnName="InstallationDate" />
+                <ScalarProperty Name="GatewayPhoneNumber" ColumnName="GatewayPhoneNumber" />
+                <ScalarProperty Name="PhoneList" ColumnName="PhoneList" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InformationSubscriber">
+            <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.InformationSubscriber">
+              <MappingFragment StoreEntitySet="InformationSubscriber">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="NumberPhone" ColumnName="NumberPhone" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="SubscribersNumber" ColumnName="SubscribersNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InstalledEquipment">
+            <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.InstalledEquipment">
+              <MappingFragment StoreEntitySet="InstalledEquipment">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CodeTypeEquipment" ColumnName="CodeTypeEquipment" />
+                <ScalarProperty Name="CodeIdentificationData" ColumnName="CodeIdentificationData" />
+                <ScalarProperty Name="CodeTypePort" ColumnName="CodeTypePort" />
+                <ScalarProperty Name="CodeInformationlocation" ColumnName="CodeInformationlocation" />
+                <ScalarProperty Name="NumbePorts" ColumnName="NumbePorts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PassportData">
+            <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.PassportData">
+              <MappingFragment StoreEntitySet="PassportData">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="CodeResidenceAddress" ColumnName="CodeResidenceAddress" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="IssuedByWhom" ColumnName="IssuedByWhom" />
+                <ScalarProperty Name="DateOfIssue" ColumnName="DateOfIssue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subscriber">
+            <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.Subscriber">
+              <MappingFragment StoreEntitySet="Subscriber">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="Condition" ColumnName="Condition" />
+                <ScalarProperty Name="CodeInformationSubscriber" ColumnName="CodeInformationSubscriber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeEquipment">
+            <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.TypeEquipment">
+              <MappingFragment StoreEntitySet="TypeEquipment">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypePort">
+            <EntityTypeMapping TypeName="st2_Rozhin_telecom1Model.TypePort">
+              <MappingFragment StoreEntitySet="TypePort">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="IDSubscriber" ColumnName="IDSubscriber" />
+                <ScalarProperty Name="NumberPort" ColumnName="NumberPort" />
+                <ScalarProperty Name="TypePort1" ColumnName="TypePort" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

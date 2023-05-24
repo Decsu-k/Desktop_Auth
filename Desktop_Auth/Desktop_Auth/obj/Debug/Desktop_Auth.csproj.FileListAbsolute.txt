@@ -16,3 +16,12 @@ D:\ДЭ\Подготовка\Сессия 1\Desktop_Auth\Desktop_Auth\Desktop_Au
 D:\ДЭ\Подготовка\Сессия 1\Desktop_Auth\Desktop_Auth\Desktop_Auth\obj\Debug\Desktop_Auth.csproj.CoreCompileInputs.cache
 D:\ДЭ\Подготовка\Сессия 1\Desktop_Auth\Desktop_Auth\Desktop_Auth\obj\Debug\Desktop_Auth.exe
 D:\ДЭ\Подготовка\Сессия 1\Desktop_Auth\Desktop_Auth\Desktop_Auth\obj\Debug\Desktop_Auth.pdb
+D:\ДЭ\Подготовка\Сессия 1\Desktop_Auth\Desktop_Auth\Desktop_Auth\bin\Debug\EntityFramework.dll
+D:\ДЭ\Подготовка\Сессия 1\Desktop_Auth\Desktop_Auth\Desktop_Auth\bin\Debug\EntityFramework.SqlServer.dll
+D:\ДЭ\Подготовка\Сессия 1\Desktop_Auth\Desktop_Auth\Desktop_Auth\bin\Debug\EntityFramework.xml
+D:\ДЭ\Подготовка\Сессия 1\Desktop_Auth\Desktop_Auth\Desktop_Auth\bin\Debug\EntityFramework.SqlServer.xml
+D:\ДЭ\Подготовка\Сессия 1\Desktop_Auth\Desktop_Auth\Desktop_Auth\bin\Debug\ru\EntityFramework.resources.dll
+D:\ДЭ\Подготовка\Сессия 1\Desktop_Auth\Desktop_Auth\Desktop_Auth\obj\Debug\Desktop_Auth_Content.g.cs
+D:\ДЭ\Подготовка\Сессия 1\Desktop_Auth\Desktop_Auth\Desktop_Auth\obj\Debug\Desktop_Auth.csproj.CopyComplete
+D:\ДЭ\Подготовка\Сессия 1\Desktop_Auth\Desktop_Auth\Desktop_Auth\obj\Debug\Views\RolePage.g.cs
+D:\ДЭ\Подготовка\Сессия 1\Desktop_Auth\Desktop_Auth\Desktop_Auth\obj\Debug\Views\RolePage.baml

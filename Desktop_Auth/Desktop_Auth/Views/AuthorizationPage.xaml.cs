@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Desktop_Auth.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +27,16 @@ namespace Desktop_Auth.Views
         }
         private void Button_InputClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Вы вошли в ситему", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+            //MessageBox.Show("Вы вошли в ситему", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+            var CurrentUser = AppData.db.Authorization.FirstOrDefault(u => u.Number == TxbNumber.Text && u.Password == TxbPassword.Text);
+            if(CurrentUser != null)
+            {
+                NavigationService.Navigate(new RolePage());
+            }
+            else
+            {
+                MessageBox.Show("Данного пользователя нет в базе");
+            }
         }
 
         private void Button_CancelClick(object sender, RoutedEventArgs e)

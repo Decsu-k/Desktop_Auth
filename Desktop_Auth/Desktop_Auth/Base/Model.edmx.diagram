@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d6fc8f55da1b44aca44747dd26abfafe" Name="Diagram1">
+        <EntityTypeShape EntityType="st2_Rozhin_telecom1Model.Authorization" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="st2_Rozhin_telecom1Model.CodeResidenceAddress" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="st2_Rozhin_telecom1Model.IdentificationData" Width="1.5" PointX="9.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="st2_Rozhin_telecom1Model.InformationContract" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="st2_Rozhin_telecom1Model.Informationlocation" Width="1.5" PointX="9.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="st2_Rozhin_telecom1Model.InformationSubscriber" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="st2_Rozhin_telecom1Model.InstalledEquipment" Width="1.5" PointX="12" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="st2_Rozhin_telecom1Model.PassportData" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="st2_Rozhin_telecom1Model.Subscriber" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="st2_Rozhin_telecom1Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="st2_Rozhin_telecom1Model.TypeEquipment" Width="1.5" PointX="9.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="st2_Rozhin_telecom1Model.TypePort" Width="1.5" PointX="9.75" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="st2_Rozhin_telecom1Model.FK_PassportData_CodeResidenceAddress" ManuallyRouted="false" />
+        <AssociationConnector Association="st2_Rozhin_telecom1Model.FK_InstalledEquipment_IdentificationData" ManuallyRouted="false" />
+        <AssociationConnector Association="st2_Rozhin_telecom1Model.FK_InformationSubscriber_InformationContract" ManuallyRouted="false" />
+        <AssociationConnector Association="st2_Rozhin_telecom1Model.FK_InstalledEquipment_Informationlocation" ManuallyRouted="false" />
+        <AssociationConnector Association="st2_Rozhin_telecom1Model.FK_InformationSubscriber_PassportData" ManuallyRouted="false" />
+        <AssociationConnector Association="st2_Rozhin_telecom1Model.FK_Subscriber_InformationSubscriber" ManuallyRouted="false" />
+        <AssociationConnector Association="st2_Rozhin_telecom1Model.FK_InstalledEquipment_TypeEquipment" ManuallyRouted="false" />
+        <AssociationConnector Association="st2_Rozhin_telecom1Model.FK_InstalledEquipment_TypePort" ManuallyRouted="false" />
+        <AssociationConnector Association="st2_Rozhin_telecom1Model.FK_TypePort_Subscriber" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
