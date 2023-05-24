@@ -70,7 +70,8 @@
                     Grid.Row="1"
                     Grid.Column="1" Height="26">
             <TextBox x:Name="TxbNumber"
-                     FontSize="18"/>
+                     FontSize="18"
+                     KeyDown="EmployeeNumberTextBox_KeyDown"/>
         </StackPanel>
 
         <StackPanel VerticalAlignment="Center"
@@ -79,7 +80,8 @@
                     Grid.Row="2"
                     Grid.Column="1" Height="26">
             <TextBox x:Name="TxbPassword" 
-                     FontSize="18"/>
+                     FontSize="18"
+                     IsEnabled="False"/>
         </StackPanel>
 
         <StackPanel VerticalAlignment="Center"
@@ -88,7 +90,9 @@
                     Grid.Row="3"
                     Grid.Column="1" Height="26">
             <TextBox x:Name="TxbCode" 
-                     FontSize="18"/>
+                     FontSize="18"
+                     IsEnabled="False"
+                     KeyDown="TxbCode_KeyDown"/>
         </StackPanel>
 
         <StackPanel VerticalAlignment="Center"
